@@ -3,11 +3,13 @@ services:
     container_name: mqtt-logger
     environment:
       MQTT_LOGGER_HOST_HOSTNAME: <hostname>
-      MQTT_LOGGER_LOKI_CLIENT_URL: http://log01.tylephony.com:3100/loki/api/v1/push
+      MQTT_LOGGER_LOKI_CLIENT_URL: http://loki:3100/loki/api/v1/push
+      MQTT_LOGGER_LOKI_TENANT_ID: <tenant>
       MQTT_LOGGER_MQTT_HOSTNAME: <hostname>
       MQTT_LOGGER_MQTT_PASSWORD: <password>
       MQTT_LOGGER_MQTT_PORT: 1883
       MQTT_LOGGER_MQTT_USERNAME: <username>
+      MQTT_LOGGER_MQTT_TOPICS: '+/debug homeassistant/#'
       TZ: America/Chicago
     image: lux4rd0/mqtt_logger:latest
     restart: always

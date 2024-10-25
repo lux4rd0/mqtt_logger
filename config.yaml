@@ -7,6 +7,7 @@ positions:
   filename: /opt/mqtt_promtail/positions.yaml
 clients:
   - url: ${MQTT_LOGGER_LOKI_CLIENT_URL}
+    tenant_id: ${MQTT_LOGGER_LOKI_TENANT_ID}
 scrape_configs:
   - job_name: mqtt_logger
     pipeline_stages:
